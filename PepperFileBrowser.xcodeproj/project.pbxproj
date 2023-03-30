@@ -7,12 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F239CDE29D54E38008E12AA /* FilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F239CDD29D54E38008E12AA /* FilesViewController.m */; };
+		4F239CE229D5586A008E12AA /* FilesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F239CE129D5586A008E12AA /* FilesViewModel.m */; };
+		4F239CE529D55A2C008E12AA /* FilesSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F239CE429D55A2C008E12AA /* FilesSectionModel.m */; };
+		4F239CE829D55AD3008E12AA /* FilesItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F239CE729D55AD3008E12AA /* FilesItemModel.m */; };
+		4F239CEB29D55CEA008E12AA /* FilesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F239CEA29D55CEA008E12AA /* FilesCollectionViewCell.m */; };
 		4FC212FA29D34F5700441DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC212F929D34F5700441DE1 /* Assets.xcassets */; };
 		4FC2130429D34F8200441DE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2130329D34F8200441DE1 /* main.m */; };
 		4FC2130729D3504200441DE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2130629D3504200441DE1 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F239CDC29D54E38008E12AA /* FilesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilesViewController.h; sourceTree = "<group>"; };
+		4F239CDD29D54E38008E12AA /* FilesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesViewController.m; sourceTree = "<group>"; };
+		4F239CE029D5586A008E12AA /* FilesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilesViewModel.h; sourceTree = "<group>"; };
+		4F239CE129D5586A008E12AA /* FilesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesViewModel.m; sourceTree = "<group>"; };
+		4F239CE329D55A2C008E12AA /* FilesSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilesSectionModel.h; sourceTree = "<group>"; };
+		4F239CE429D55A2C008E12AA /* FilesSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesSectionModel.m; sourceTree = "<group>"; };
+		4F239CE629D55AD3008E12AA /* FilesItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilesItemModel.h; sourceTree = "<group>"; };
+		4F239CE729D55AD3008E12AA /* FilesItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesItemModel.m; sourceTree = "<group>"; };
+		4F239CE929D55CEA008E12AA /* FilesCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilesCollectionViewCell.h; sourceTree = "<group>"; };
+		4F239CEA29D55CEA008E12AA /* FilesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesCollectionViewCell.m; sourceTree = "<group>"; };
 		4FC212F229D34F5600441DE1 /* PepperFileBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PepperFileBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC212F929D34F5700441DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FC2130329D34F8200441DE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -31,6 +46,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F239CDF29D54E3B008E12AA /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F239CDC29D54E38008E12AA /* FilesViewController.h */,
+				4F239CDD29D54E38008E12AA /* FilesViewController.m */,
+				4F239CE929D55CEA008E12AA /* FilesCollectionViewCell.h */,
+				4F239CEA29D55CEA008E12AA /* FilesCollectionViewCell.m */,
+				4F239CE029D5586A008E12AA /* FilesViewModel.h */,
+				4F239CE129D5586A008E12AA /* FilesViewModel.m */,
+				4F239CE329D55A2C008E12AA /* FilesSectionModel.h */,
+				4F239CE429D55A2C008E12AA /* FilesSectionModel.m */,
+				4F239CE629D55AD3008E12AA /* FilesItemModel.h */,
+				4F239CE729D55AD3008E12AA /* FilesItemModel.m */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		4FC212E929D34F5600441DE1 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +85,7 @@
 				4FC212F929D34F5700441DE1 /* Assets.xcassets */,
 				4FC2130529D3504200441DE1 /* AppDelegate.h */,
 				4FC2130629D3504200441DE1 /* AppDelegate.m */,
+				4F239CDF29D54E3B008E12AA /* Files */,
 				4FC2130329D34F8200441DE1 /* main.m */,
 			);
 			path = PepperFileBrowser;
@@ -128,6 +161,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FC2130729D3504200441DE1 /* AppDelegate.m in Sources */,
+				4F239CDE29D54E38008E12AA /* FilesViewController.m in Sources */,
+				4F239CE529D55A2C008E12AA /* FilesSectionModel.m in Sources */,
+				4F239CE229D5586A008E12AA /* FilesViewModel.m in Sources */,
+				4F239CE829D55AD3008E12AA /* FilesItemModel.m in Sources */,
+				4F239CEB29D55CEA008E12AA /* FilesCollectionViewCell.m in Sources */,
 				4FC2130429D34F8200441DE1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
