@@ -15,11 +15,11 @@ OBJC_EXPORT id objc_msgSendSuper2(void);
 
 static void FilesViewController_dealloc(id self, SEL cmd) {
     FilesViewModel *viewModel;
-    object_getInstanceVariable(self, "viewModel", (void **)&viewModel);
+    object_getInstanceVariable(self, "_viewModel", (void **)&viewModel);
     [viewModel release];
     
     NSURL *url;
-    object_getInstanceVariable(self, "url", (void **)&url);
+    object_getInstanceVariable(self, "_url", (void **)&url);
     [url release];
     
     struct objc_super superInfo = { self, [self superclass] };
@@ -56,17 +56,17 @@ static void FilesViewController_viewDidLoad(id self, SEL cmd) {
     });
     
     NSURL *url;
-    object_getInstanceVariable(self, "url", (void **)&url);
+    object_getInstanceVariable(self, "_url", (void **)&url);
     FilesViewModel *viewModel = [[FilesViewModel alloc] initWithDataSource:dataSource url:url];
     [dataSource release];
-    object_setInstanceVariable(self, "viewModel", [viewModel retain]);
+    object_setInstanceVariable(self, "_viewModel", [viewModel retain]);
     [viewModel loadDataSource];
     [viewModel release];
 }
 
 static void FilesViewController_collectionView_didSelectItemAtIndexPath(id self, SEL cmd, id collectionView, NSIndexPath *indexPath) {
     FilesViewModel *viewModel;
-    object_getInstanceVariable(self, "viewModel", (void **)&viewModel);
+    object_getInstanceVariable(self, "_viewModel", (void **)&viewModel);
     id navigationController = ((id (*)(id, SEL))objc_msgSend)(self, NSSelectorFromString(@"navigationController"));
     
     [viewModel itemModelFromIndexPath:indexPath completionHandler:^(FilesItemModel * _Nullable itemModel) {
@@ -89,8 +89,8 @@ Class FilesViewController(void) {
     dispatch_once(&onceToken, ^{
         FilesViewController = objc_allocateClassPair(NSClassFromString(@"SPViewController"), "FilesViewController", 0);
         
-        class_addIvar(FilesViewController, "viewModel", sizeof(id), rint(log2(sizeof(id))), @encode(id));
-        class_addIvar(FilesViewController, "url", sizeof(id), rint(log2(sizeof(id))), @encode(id));
+        class_addIvar(FilesViewController, "_viewModel", sizeof(id), rint(log2(sizeof(id))), @encode(id));
+        class_addIvar(FilesViewController, "_url", sizeof(id), rint(log2(sizeof(id))), @encode(id));
         
         class_addMethod(FilesViewController, @selector(dealloc), (IMP)FilesViewController_dealloc, nil);
         class_addMethod(FilesViewController, NSSelectorFromString(@"loadView"), (IMP)FilesViewController_loadView, nil);
@@ -105,7 +105,7 @@ id FilesViewController_initWithURL(id self, NSURL *url) {
     self = ((id (*)(id, SEL))objc_msgSend)(self, @selector(init));
     
     if (self) {
-        object_setInstanceVariable(self, "url", [url copy]);
+        object_setInstanceVariable(self, "_url", [url copy]);
     }
     
     return self;
