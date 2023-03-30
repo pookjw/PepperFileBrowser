@@ -43,33 +43,18 @@ static id FilesCollectionViewCell_initWithFrame(id self, SEL cmd, CGRect frame) 
     
     id stackView = ((id (*)(id, SEL, CGRect))objc_msgSend)([NSClassFromString(@"UIStackView") alloc], NSSelectorFromString(@"initWithFrame:"), bounds);
     
-    ((void (*)(id, SEL, BOOL))objc_msgSend)(stackView, NSSelectorFromString(@"setTranslatesAutoresizingMaskIntoConstraints:"), NO);
-    
-    id stackViewTopAnchor = ((id (*)(id, SEL))objc_msgSend)(stackView, NSSelectorFromString(@"topAnchor"));
-    id contentViewTopAnchor = ((id (*)(id, SEL))objc_msgSend)(contentView, NSSelectorFromString(@"topAnchor"));
-    
-    id stackViewLeadingAnchor = ((id (*)(id, SEL))objc_msgSend)(stackView, NSSelectorFromString(@"leadingAnchor"));
-    id contentViewLeadingAnchor = ((id (*)(id, SEL))objc_msgSend)(contentView, NSSelectorFromString(@"leadingAnchor"));
-    
-    id stackViewTrailingAnchor = ((id (*)(id, SEL))objc_msgSend)(stackView, NSSelectorFromString(@"trailingAnchor"));
-    id contentViewTrailingAnchor = ((id (*)(id, SEL))objc_msgSend)(contentView, NSSelectorFromString(@"trailingAnchor"));
-    
-    id stackViewBottomAnchor = ((id (*)(id, SEL))objc_msgSend)(stackView, NSSelectorFromString(@"bottomAnchor"));
-    id contentViewBottomAnchor = ((id (*)(id, SEL))objc_msgSend)(contentView, NSSelectorFromString(@"bottomAnchor"));
-    
-    id stackViewBottomConstraint = ((id (*)(id, SEL, id))objc_msgSend)(stackViewBottomAnchor, NSSelectorFromString(@"constraintEqualToAnchor:"), contentViewBottomAnchor);
-    ((void (*)(id, SEL, float))objc_msgSend)(stackViewBottomConstraint, NSSelectorFromString(@"setPriority:"), 750.f);
-    
-    NSArray *stackViewConstraints = @[
-        ((id (*)(id, SEL, id))objc_msgSend)(stackViewTopAnchor, NSSelectorFromString(@"constraintEqualToAnchor:"), contentViewTopAnchor),
-        ((id (*)(id, SEL, id))objc_msgSend)(stackViewLeadingAnchor, NSSelectorFromString(@"constraintEqualToAnchor:"), contentViewLeadingAnchor),
-        ((id (*)(id, SEL, id))objc_msgSend)(stackViewTrailingAnchor, NSSelectorFromString(@"constraintEqualToAnchor:"), contentViewTrailingAnchor),
-        stackViewBottomConstraint
-    ];
-    
     ((void (*)(id, SEL, id))objc_msgSend)(contentView, NSSelectorFromString(@"addSubview:"), stackView);
     
-    ((void (*)(id, SEL, NSArray *))objc_msgSend)(NSClassFromString(@"NSLayoutConstraints"), NSSelectorFromString(@"activateConstraints:"), stackViewConstraints);
+    //
+    
+    id leadingImageView = [NSClassFromString(@"UIImageView") new];
+    UIImage *folderImage = [UIImage systemImageNamed:@"folder"];
+    ((void (*)(id, SEL, UIImage *))objc_msgSend)(leadingImageView, NSSelectorFromString(@"setImage:"), folderImage);
+    
+    ((void (*)(id, SEL, id))objc_msgSend)(stackView, NSSelectorFromString(@"addArrangedSubview:"), leadingImageView);
+    
+    object_setInstanceVariable(self, "_leadingImageView", [leadingImageView retain]);
+    [leadingImageView release];
     
     //
     
@@ -81,6 +66,17 @@ static id FilesCollectionViewCell_initWithFrame(id self, SEL cmd, CGRect frame) 
     
     object_setInstanceVariable(self, "_label", [label retain]);
     [label release];
+    
+    //
+    
+    id trailingImageView = [NSClassFromString(@"UIImageView") new];
+    UIImage *chevronRightImage = [UIImage systemImageNamed:@"chevron.right"];
+    ((void (*)(id, SEL, UIImage *))objc_msgSend)(trailingImageView, NSSelectorFromString(@"setImage:"), chevronRightImage);
+    
+    ((void (*)(id, SEL, id))objc_msgSend)(stackView, NSSelectorFromString(@"addArrangedSubview:"), trailingImageView);
+    
+    object_setInstanceVariable(self, "_trailingImageView", [trailingImageView retain]);
+    [trailingImageView release];
     
     //
     

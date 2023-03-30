@@ -28,6 +28,10 @@ static void FilesViewController_dealloc(id self, SEL cmd) {
 
 static void FilesViewController_loadView(id self, SEL cmd) {
     id layout = [NSClassFromString(@"PUICListCollectionViewLayout") new];
+    
+    ((void (*)(id, SEL, BOOL))objc_msgSend)(layout, NSSelectorFromString(@"setCurvesTop:"), YES);
+    ((void (*)(id, SEL, BOOL))objc_msgSend)(layout, NSSelectorFromString(@"setCurvesBottom:"), YES);
+    
     id collectionView = ((id (*)(id, SEL, CGRect, id))objc_msgSend)([NSClassFromString(@"PUICListCollectionView") alloc], NSSelectorFromString(@"initWithFrame:collectionViewLayout:"), CGRectNull, layout);
     
     [layout release];
