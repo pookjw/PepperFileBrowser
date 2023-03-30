@@ -63,6 +63,9 @@ static void FilesViewController_viewDidLoad(id self, SEL cmd) {
     object_getInstanceVariable(self, "_url", (void **)&url);
     FilesViewModel *viewModel = [[FilesViewModel alloc] initWithDataSource:dataSource url:url];
     [dataSource release];
+    
+    ((void (*)(id, SEL, NSString *))objc_msgSend)(self, NSSelectorFromString(@"setTitle:"), viewModel.url.lastPathComponent);
+    
     object_setInstanceVariable(self, "_viewModel", [viewModel retain]);
     [viewModel loadDataSource];
     [viewModel release];

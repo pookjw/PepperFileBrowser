@@ -11,7 +11,6 @@
 
 @interface FilesViewModel ()
 @property (retain) id dataSource;
-@property (copy) NSURL *url;
 @property (retain) NSOperationQueue *queue;
 @end
 
@@ -20,7 +19,9 @@
 - (instancetype)initWithDataSource:(id)dataSource url:(NSURL *)url {
     if (self = [super init]) {
         self.dataSource = dataSource;
-        self.url = url;
+        
+        [_url release];
+        _url = [url copy];
         
         [self setupQueue];
     }

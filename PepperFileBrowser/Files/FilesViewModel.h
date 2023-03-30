@@ -14,6 +14,7 @@ static NSNotificationName const NSNotificationNameFilesViewModelDidErrorOccur = 
 static NSString * const FilesViewModelErrorKey = @"FilesViewModelErrorKey";
 
 @interface FilesViewModel : NSObject
+@property (copy, readonly) NSURL *url;
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithDataSource:(id)dataSource url:(NSURL *)url;
