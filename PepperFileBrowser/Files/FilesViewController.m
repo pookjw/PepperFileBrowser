@@ -79,12 +79,14 @@ static void FilesViewController_collectionView_didSelectItemAtIndexPath(id self,
     [viewModel itemModelFromIndexPath:indexPath completionHandler:^(FilesItemModel * _Nullable itemModel) {
         NSURL * _Nullable url = itemModel.url;
         
-        if (url) {
+        if (itemModel.isDirectory) {
             [NSOperationQueue.mainQueue addOperationWithBlock:^{
                 id filesViewController = FilesViewController_initWithURL([FilesViewController() alloc], url);
                 ((void (*)(id, SEL, id, BOOL))objc_msgSend)(navigationController, NSSelectorFromString(@"pushViewController:animated:"), filesViewController, YES);
                 [filesViewController release];
             }];
+        } else {
+            NSLog(@"TODO");
         }
     }];
 }
