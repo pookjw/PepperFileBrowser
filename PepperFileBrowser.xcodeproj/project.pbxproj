@@ -12,6 +12,7 @@
 		4F239CE529D55A2C008E12AA /* FilesSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F239CE429D55A2C008E12AA /* FilesSectionModel.m */; };
 		4F239CE829D55AD3008E12AA /* FilesItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F239CE729D55AD3008E12AA /* FilesItemModel.m */; };
 		4F239CEB29D55CEA008E12AA /* FilesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F239CEA29D55CEA008E12AA /* FilesCollectionViewCell.m */; };
+		4F3DCD2829D5AF2300845A5C /* NSObject+Foundation_IvarDescription.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F3DCD2729D5AF2300845A5C /* NSObject+Foundation_IvarDescription.mm */; };
 		4FC212FA29D34F5700441DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FC212F929D34F5700441DE1 /* Assets.xcassets */; };
 		4FC2130429D34F8200441DE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2130329D34F8200441DE1 /* main.m */; };
 		4FC2130729D3504200441DE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2130629D3504200441DE1 /* AppDelegate.m */; };
@@ -28,6 +29,8 @@
 		4F239CE729D55AD3008E12AA /* FilesItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesItemModel.m; sourceTree = "<group>"; };
 		4F239CE929D55CEA008E12AA /* FilesCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilesCollectionViewCell.h; sourceTree = "<group>"; };
 		4F239CEA29D55CEA008E12AA /* FilesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilesCollectionViewCell.m; sourceTree = "<group>"; };
+		4F3DCD2629D5AF2300845A5C /* NSObject+Foundation_IvarDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Foundation_IvarDescription.h"; sourceTree = "<group>"; };
+		4F3DCD2729D5AF2300845A5C /* NSObject+Foundation_IvarDescription.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+Foundation_IvarDescription.mm"; sourceTree = "<group>"; };
 		4FC212F229D34F5600441DE1 /* PepperFileBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PepperFileBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC212F929D34F5700441DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FC2130329D34F8200441DE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				4FC2130629D3504200441DE1 /* AppDelegate.m */,
 				4F239CDF29D54E3B008E12AA /* Files */,
 				4FC2130329D34F8200441DE1 /* main.m */,
+				4F3DCD2629D5AF2300845A5C /* NSObject+Foundation_IvarDescription.h */,
+				4F3DCD2729D5AF2300845A5C /* NSObject+Foundation_IvarDescription.mm */,
 			);
 			path = PepperFileBrowser;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				4F239CE529D55A2C008E12AA /* FilesSectionModel.m in Sources */,
 				4F239CE229D5586A008E12AA /* FilesViewModel.m in Sources */,
 				4F239CE829D55AD3008E12AA /* FilesItemModel.m in Sources */,
+				4F3DCD2829D5AF2300845A5C /* NSObject+Foundation_IvarDescription.mm in Sources */,
 				4F239CEB29D55CEA008E12AA /* FilesCollectionViewCell.m in Sources */,
 				4FC2130429D34F8200441DE1 /* main.m in Sources */,
 			);
